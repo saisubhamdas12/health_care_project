@@ -921,7 +921,8 @@ def change_password2(request):
 
 
 def new_part(name):
-     pass
+     if data:
+          pass
 
 
 
