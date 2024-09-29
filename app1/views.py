@@ -920,9 +920,7 @@ def change_password2(request):
     return render (request,'forget_password.html')
 
 
-def new_part(name):
-     if data:
-          pass
+
 
 
 
