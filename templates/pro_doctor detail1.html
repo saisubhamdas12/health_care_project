@@ -1,0 +1,99 @@
+{% extends 'pat_dummy2.html' %}
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+
+{% block body_block %}
+    <title>Doctor Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .doctor-profile {
+            text-align: center;
+        }
+
+        .doctor-profile img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+        .doctor-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .doctor-details h2 {
+            color: #333;
+        }
+
+        .doctor-details p {
+            color: #777;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: #333;
+        }
+
+        .contact-info p {
+            color: #777;
+        }
+    </style>
+    <div class="container">
+        <div class="doctor-profile">
+            <img src="https://www.vaidam.com/sites/default/files/dr._sandeep_vaishya_0.jpg" alt="Doctor Name">
+            <h1>Dr Sandeep Vaishya</h1>
+            <p>Specialty: Dermatologists</p>
+            <label style="color: #333;">Doctor_ZId:</label>
+            <select name="data1"  class="from-control">
+             {% for i in data1 %}
+             {% if i.Department == 'Dermatologists' %}
+                        <option value="{{ i.Doctor_id }}">{{ i.Doctor_id  }}</option>
+                {% endif %}
+             {% endfor %}
+            </select>
+        </div>
+
+        <div class="doctor-details">
+            <h2 style="color: red;">About Dr Sandeep Vaishya</h2>
+
+            <p style="color: #333;">Dr Sandeep Vaishya is one of the top Neurosurgeons in India.
+                He has 27+ years of experience in the field & has been associated with some of the best hospitals in India.
+                His specializations are Intracranial Brain Tumour Surgery, Deep Brain Stimulation Surgery, Skull Base Surgery, Brain Surgery, General Surgery, Minimally Invasive Brain, Spine Surgery & Image-Guided Neurosurgery, Peripheral Nerve Surgery, and Brachial Plexus Surgery.
+                Dr. Vaishya has completed his MBBS & MS from the well-known G R Medical College, Gwalior. Following which he did his MCh at the prestigious AIIMS, Delhi.
+                He is an awardee of the Sundt Fellowship at Mayo Clinic, USA.
+                He is one of the leading surgeons in the world for brachial plexus Injuries and in South Asia for Gamma Knife Surgery.
+                He did several successful surgeries in the field of neurosurgery.
+                Dr. Vaishya's treatment for Hydrocephalus was also featured in the popular Netflix documentary Rooting for Roona.</p>
+                <a href="{% url 'Appoint' %}" class="btn btn-danger">Booking Appointment</a>
+        </div>
+
+        <div class="contact-info" style="color: #333;">
+            <h3>Contact Information</h3>
+            <p>Email: john.doe@example.com</p>
+            <p>Phone: +123-456-7890</p>
+            <p>Address: 123 Main Street, City, State, Zip</p>
+        </div>
+    </div>
+
+
+
+{% endblock %}

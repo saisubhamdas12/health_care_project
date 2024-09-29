@@ -1,0 +1,136 @@
+{% extends 'Pat_dummy2.html' %}
+{% block title %}
+<title>registration</title>
+{% endblock %}
+
+{% block body_block %}
+<div class="container" >
+
+    <div>
+        <center>
+            <form method="POST" enctype="multipart/form-data">
+              <h2 style="color: #131414;">Patient Registration</h2>
+                {% csrf_token %}
+                <div class="row mb-4">
+                    <div class="col">
+                        <div >
+                            <label  class="cars"  for="Doctor">Username:</label>
+                            {{ pmu.username }}
+                        </div>
+                    </div>            
+                    <div class="col">
+                        <div  >
+                            <label  class="cars"  for="Doctor">Email:</label>
+                            {{ pmu.email }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div  >
+                            <label  class="cars"  for="PatientName">Password:</label>
+                            {{ pmu.password }}
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="DoctorName">Mobile:</label>
+                            {{ pmf.Mobile }}
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="DOB">Patient Id:</label>
+                            {{ pmf.Patient_id }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="Phoneno">Profile pic:</label>
+                            {{pmf.Profile_pic}}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label for="cars">Address:</label>
+                            {{ pmf.Address }}
+                        </div>
+                    </div>
+                  
+                </div>  
+                    <td><input type="submit" value="submit" class="btn btn-primary btn-block mb-4"></td> 
+                
+            </form>
+        </center>
+    </div>
+</div>
+<style>
+
+    form{
+        border-radius: 10px;
+        border:2px solid rgb(0, 55, 255);
+        padding: 10px;
+        width: 650px;
+        background:blanchedalmond;
+        height: 70%;
+        
+    }
+    label{
+        color: #131414;
+    }
+
+    input
+    {
+        background: transparent;
+        color: #fff;
+        border: none;
+        border-bottom:3px solid #4fc3dc;
+        width: 100%;
+        padding: 10px;
+        border-radius: 1px solid rgb(138,191,191);
+    }
+
+
+
+   .container
+   {
+    position: relative;
+    width:83%;
+    margin-left: 50px;
+   
+    height:615px;
+    overflow: hidden;
+   }
+   .bubbles{
+    position: relative;
+    display: flex;
+   }
+   .bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3d4;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+    animation:animate 5s linear infinite ;
+    animation-duration: calc(128s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,0 0 50px #ff2d75,0 0 100px #ff2d75;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(0.9);
+    }
+}    
+</style>
+{% endblock %}

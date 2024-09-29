@@ -1,0 +1,83 @@
+{% extends 'doc_dummy1.html' %}
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+
+{% block body_block %}
+
+  <div class="main_container">
+
+    <div class="header_style">
+      <h1 class="header_first_heading">Apollo Hospitals Enterprises Ltd...</h1>
+    </div>
+  
+    <div style="text-align: center";>
+      <h1 class="header_second_container">Diagnosis Record</h1>
+    </div>
+   
+    <div class="diagnosis_record_container"> 
+        <div class="details_container">
+          <p> <span class="details_styles_bold"> Patient Id: </span> {{ customer_record.Patient_id}}</p>
+          <p> <span class="details_styles_bold"> Patient Name: </span> {{ customer_record.PatientName }}<p>
+          <p><span class="details_styles_bold"> Patient Gender: </span> {{ customer_record.PatientGender}}</p>
+          <p><span class="details_styles_bold"> Phone no: </span> {{ customer_record.Phoneno }} </p>
+          <p><span class="details_styles_bold"> DOB: </span> {{ customer_record.DOB }} </p>
+          <p><span class="details_styles_bold"> Email address: </span> {{ customer_record.Emailaddress }} </p>
+          <p><span class="details_styles_bold"> Neurological: </span> {{ customer_record.Neurological }} </p>
+          <p><span class="details_styles_bold"> Other: </span> {{ customer_record.Other }} </p>
+          <p><span class="details_styles_bold"> Diagnosis: </span> {{ customer_record.Diagnosis }} </p>
+        </div>
+    </div>
+	  <a href="{% url 'doc_display' %}" class="btn btn-secondary">Back</a>
+  
+  <a href="{% url 'delete_record1' customer_record.id %}" class="btn btn-danger">Cancle</a>
+  
+  <a href="{% url 'update_record1' customer_record.id %}" class="btn btn-secondary">Update Record</a>
+	</div>
+  <style>
+    .main_container {
+      background-color: lightgray;
+    }
+    .diagnosis_record_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .header_style {
+      height: 10vh;
+      background: linear-gradient( to right, red , darkblue );
+      padding-left: 30px;
+      display: flex;
+      width: 100vw;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+    .header_first_heading {
+      color: white;
+      font-size: 25px;
+      font-family: "Roboto";
+    }
+    .header_second_container {
+      color: darkred;
+      font-size: 25px;
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+    .details_container {
+      margin-top: 20px;
+    }
+    .details_styles_bold {
+      font-weight: bold;
+      margin-left: 100px;
+    }
+  
+  
+  </style>
+ 
+  
+		  
+  
+  {% endblock %}

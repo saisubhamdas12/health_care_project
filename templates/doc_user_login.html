@@ -1,0 +1,68 @@
+{% extends 'doc_dummy1.html' %}
+
+{% block title %}
+<title style="color: aqua;">loggin</title>
+{% endblock %}
+
+
+{% block body_block %}
+<div class="container">
+<div class="login-box">
+
+    <center><h2 style="color: rgb(27, 27, 26);" class="h1">Login</h2></center>
+  <form method="POST"  > 
+    {% csrf_token %}
+
+    <div class="input-box" >
+      <label style="color: rgb(18, 18, 18);">Username:</label>
+      <input type="text" id="text" name="username" required class="form-control">
+      
+    </div>
+    <div class="input-box" >
+      <label style="color: rgb(11, 12, 12);">Password:</label>
+      <input type="password" id="password" name="password" class="form-control">
+      
+    </div><br>
+    <button type="submit" class="btn btn-primary btn-block mb-4" style="color: rgb(16, 16, 16);">Log in</button>
+    <div class="signup-link">
+      <center><a href="{% url 'hospital' %}" style="color: rgb(24, 28, 106);">Sign up</a><br></center>
+      <center><a href="{% url 'send_email_with_pin' %}" style="color: rgb(24, 28, 106);">Forgot password</a><br></center>
+      
+  
+
+      
+    </div>
+  </form>
+  
+
+</div>
+<style>
+    .container{
+        margin-top:-40%;
+        
+    }
+    .btn{
+        color: aqua;
+    }
+   
+    .container
+    {
+     position: relative;
+     width:83%;
+     margin-left: 50px;
+     margin-top: -45%;
+     height:615px;
+     overflow: hidden;
+    }
+    form{
+      border-radius: 10px;
+      border:2px solid red;
+      padding: 10px;
+      width: 500px;
+      margin-left:30%;
+      background:blanchedalmond;
+  }
+</style>
+
+
+{% endblock %}

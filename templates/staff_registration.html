@@ -1,0 +1,129 @@
+{% extends 'staff_dummy3.html' %}
+{% block title %}
+<title>registration</title>
+{% endblock %}
+
+{% block body_block %}
+<div class="container" >
+
+    <div>
+        <center>
+            <form method="POST" enctype="multipart/form-data">
+              <h2 style="color: #0f0e0e;">Staff Registration</h2>
+              <br> 
+                {% csrf_token %}
+                <div class="row mb-4">
+                    <div class="col">
+                        <div >
+                            <label  class="cars"  for="Doctor">Username:</label>
+                            {{ smu.username }}
+                        </div>
+                    </div>            
+                    <div class="col">
+                        <div  >
+                            <label  class="cars"  for="Doctor"> Email:</label>
+                            {{ smu.email }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div  >
+                            <label  class="cars"  for="PatientName">Password:</label>
+                            {{ smu.password }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="DoctorName">Mobile:</label>
+                            {{ pmf.Mobile }}
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div>
+                            <label for="cars">Address:</label>
+                            {{ pmf.Address }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="Phoneno">Profile_pic:</label>
+                            {{pmf.Profile_pic}}
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div>
+                                <label  class="cars"  for="Phoneno">Status:</label>
+                                {{pmf.Status}}
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                    <td><input type="submit" value="submit" class="btn btn-primary btn-block mb-4">
+            </form>
+        </center>
+    </div>
+</div>
+<style>
+
+    form{
+        border-radius: 10px;
+        border:2px solid rgb(0, 55, 255);
+        padding: 10px;
+        width: 700px;
+        background: blanchedalmond;
+    }
+    label{
+        color: #0c0c0c;
+    }
+    input
+    {
+        background: transparent;
+        color: #fff;
+        border: none;
+        border-bottom:3px solid #4fc3dc;
+    }
+
+   .container
+   {
+    position: relative;
+    width:83%;
+    margin-left: 50px;
+    margin-top: -45%;
+    height:615px;
+    overflow: hidden;
+   }
+   .bubbles{
+    position: relative;
+    display: flex;
+   }
+   .bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3d4;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+    animation:animate 5s linear infinite ;
+    animation-duration: calc(128s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,0 0 50px #ff2d75,0 0 100px #ff2d75;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(0.9);
+    }
+}    
+</style>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'doc_dummy1.html' %}
+{% block title %}
+<title>registration</title>
+{% endblock %}
+
+{% block body_block %}
+<div class="container">
+   
+    <div>
+        <center>
+            <form method="POST" enctype="multipart/form-data">
+              <h2 style="color: black;">Doctor information</h2>
+                {% csrf_token %}
+                <div class="row mb-4">
+                    <div class="col">
+                        <div >
+                            <label  class="cars" >Username:</label>
+                             {{ umf.username }}
+                        </div>
+                    </div>            
+                    <div class="col">
+                        <div  >
+                            <label  class="cars" >Email:</label>
+                            {{ umf.email }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div  >
+                            <label  class="cars"  >Password:</label>
+                            {{ umf.password }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  >Doctor id:</label>
+                            {{ pmf.Doctor_id }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label for="cars">Mobile:</label>
+                            {{ pmf.Mobile }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="DOB">Address:</label>
+                            {{ pmf.Address }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="Phoneno">Department:</label>
+                            {{pmf.Department}}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label  class="cars"  for="Phoneno">Profile pic:</label>
+                            {{ pmf.Profile_pic}}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label for="cars">Document:</label>
+                            {{ pmf.Document}}
+                        </div>
+                    </div> 
+                </div>
+                    <br>
+                    <td><input type="submit" value="submit" class="btn btn-primary btn-block mb-4"></td> 
+                </div>
+                
+                
+            </form>
+        </center>
+    </div>
+</div>  
+<style>
+    h2 {
+        color: rgb(249, 164, 8);
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    form{
+        border-radius: 10px;
+        border:2px solid red;
+        padding: 10px;
+        width: 700px;
+        background: blanchedalmond;
+    }
+    label{
+        color: black;
+    }
+
+    input
+    {
+        background: transparent;
+        color: #fff;
+        border: none;
+        border-bottom:3px solid #4fc3dc;
+    }
+    
+   .container
+   {
+    position: relative;
+    width:83%;
+    margin-left: 50px;
+    margin-top: -45%;
+    height:615px;
+    overflow: hidden;
+   }
+   .bubbles{
+    position: relative;
+    display: flex;
+   }
+   .bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3d4;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+    animation:animate 5s linear infinite ;
+    animation-duration: calc(128s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,0 0 50px #ff2d75,0 0 100px #ff2d75;
+}
+   
+</style>
+{% endblock %}

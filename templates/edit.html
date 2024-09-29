@@ -1,0 +1,126 @@
+{% extends 'pat_dummy2.html' %}
+{% block title %}
+<title>registration</title>
+{% endblock %}
+
+{% block body_block %}
+<div class="container">
+
+    <div>
+        <center>
+            <form method='POST' enctype="multipart/form-data">
+                {% csrf_token %}
+                <td>Patient Id : <input type="text" name="Patient" id="Patient" value="{{data1. }}"></td> 
+                <br><br>  
+                <td>Doctor Id:   <input type="text" name="Doctor" id="Doctor"></td>
+                <br><br>
+                <td>Patient Name: <input type="text" name="patientName" id="date"></td>
+                <br><br>
+                <td>Doctor Name:  <input type="text" name="doctorname" id="doctorname"></td><br><br>
+                <td>Patient mobile : <input type="int" name="mobile" id="mobile"></td><br><br>
+                <td>Symptoms : <input name="symptoms" id="symptoms"></td><br>
+                <br>
+                <td>Appointment Date : <input type="Date" name="appointmentDate" id="appointmentDate"></td><br>
+                <td>Date:  <input type="date" name="data" id="data"></td>
+                <td>Time:  <input type="time" name="time" id="time"></td><br><br>
+                <label for="cars">Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="volvo">Male</option>
+                    <option value="saab">Female</option>
+                </select>
+                <label for="cars">department:</label>
+                <select name="department" id="department">
+                    <option value="volvo">Cardiologist</option>
+                    <option value="saab">Dermatologists</option>
+                    
+                </select><br>
+                <td>Description:</td>
+                <textarea name="description" id="description" cols="50" rows="3">Enter your text....</textarea>
+                <br>
+                <br>
+                <td><input type="submit" value="booking"class="btn btn-success"></td> 
+            </form>
+        </center>
+    </div>
+</div>
+<style>
+
+    form{
+        border: 2px solid black;
+        border-radius: 20px;
+        height: 600px;
+        width:500px;
+        color: #fff;
+        font-size:14px;
+        position: relative;
+        top: 50px;
+        left: 50px;
+        position: absolute;
+        left:300px;
+        margin-top:-50px;
+        background: transparent;
+        padding: 10px 20px;
+        border-left:10px ridge #da45cb;
+        border-top:10px ridge #4fc3d4 ;
+        border-bottom:10px ridge #ff2d75;
+        border-right:10px ridge #4fc3d4 ;
+    }
+
+    input
+    {
+        background: transparent;
+        color: #fff;
+        border: none;
+        border-bottom:3px solid #4fc3dc;
+    }
+    marquee
+    {
+        background:linear-gradient(90deg,#4fc3d4,#ff2d75) scroll;
+        border-radius: 20px;
+        margin: 0px 0 20px 0;
+
+    }
+   *
+   {
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+   }
+   .container
+   {
+    position: relative;
+    width:83%;
+    margin-left: 50px;
+    margin-top: -45%;
+    height:615px;
+    overflow: hidden;
+   }
+   .bubbles{
+    position: relative;
+    display: flex;
+   }
+   .bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3d4;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+    animation:animate 5s linear infinite ;
+    animation-duration: calc(128s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,0 0 50px #ff2d75,0 0 100px #ff2d75;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(0.9);
+    }
+}    
+</style>
+{% endblock %}

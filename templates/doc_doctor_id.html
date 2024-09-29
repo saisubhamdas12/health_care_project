@@ -1,0 +1,50 @@
+{% extends 'doc_dummy1.html' %}
+
+{% block title %}
+<title style="color: aqua;">loggin</title>
+{% endblock %}
+
+
+{% block body_block %}
+<div class="container">
+<div class="login-box">
+    <h2 style="color: rgb(25, 25, 24);margin-left: 530px;" class="h1">Varify ID</h2>
+  <form method="POST" >
+    {% csrf_token %}
+    <div class="input-box" >
+      <label style="color: rgb(12, 13, 13);">Username:</label>
+      <input type="text" id="text" name="username" class="form-control">
+    </div>
+    <div class="input-box" >
+      <label style="color: rgb(6, 6, 6);">doctor id:</label>
+      <input type="text" id="text" name="doctor_id" class="form-control">
+      
+    </div><br>
+    <button type="submit" class="btn btn-primary btn-block mb-4" style="color: rgb(16, 16, 16);">Login</button>
+  
+  </form>
+</div>
+<style>
+    .container{
+        margin-top:-40%;
+        
+    }
+    .btn{
+        color: aqua;
+    }
+    .h1{
+        margin-left: 1%;
+    }
+    form{
+      border-radius: 10px;
+      border:2px solid red;
+      padding: 10px;
+      width: 300px;
+      margin-left: 450px;
+      background: rgb(207, 203, 203);
+      
+  }
+</style>
+
+
+{% endblock %}

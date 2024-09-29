@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> 
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+    rel="stylesheet"/>
+</head>
+
+<style>
+  .main_container {
+    background-color: lightgray;
+  }
+  .diagnosis_record_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .contain{
+    background:whitesmoke;
+  }
+  .header_style {
+    height: 10vh;
+    background: linear-gradient( to right, red , darkblue );
+    padding-left: 30px;
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+  .header_first_heading {
+    color: white;
+    font-size: 25px;
+    font-family: "Roboto";
+  }
+  .header_second_container {
+    color: darkred;
+    font-size: 25px;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+  .details_container {
+    margin-top: 20px;
+  }
+  .details_styles_bold {
+    font-weight: bold;
+    margin-left: 100px;
+  }
+  .pdf{
+    margin-left:500px;
+  }
+
+
+</style>
+
+<body class="contain">
+
+  <div class="main_container" id="my-element">
+
+      
+
+    <div class="header_style">
+      <h1 class="header_first_heading">Apollo Hospitals Enterprises Ltd...</h1>
+    </div>
+    
+    <div style="text-align: center";>
+      <h1 class="header_second_container">Diagnosis Record</h1>
+      
+    </div>
+    
+      <div class="diagnosis_record_container"> 
+        <div class="details_container">
+          <p> <span class="details_styles_bold"> Patient Id: </span> {{ customer_record.Patient_id }}</p>
+          <p> <span class="details_styles_bold"> Patient Name: </span> {{ customer_record.PatientName }}<p>
+          <p><span class="details_styles_bold"> Patient Gender: </span> {{ customer_record.PatientGender}}</p>
+          <p><span class="details_styles_bold"> Phone no: </span> {{ customer_record.Phoneno }} </p>
+          <p><span class="details_styles_bold"> DOB: </span> {{ customer_record.DOB }} </p>
+          <p><span class="details_styles_bold"> Email address: </span> {{ customer_record.Emailaddress}} </p>
+          <p><span class="details_styles_bold"> Neurological: </span> {{ customer_record.Neurological }} </p>
+          <p><span class="details_styles_bold"> Other: </span> {{ customer_record.Other}} </p>
+          <p><span class="details_styles_bold"> Diagnosis: </span> {{ customer_record.Diagnosis}} </p>
+        </div>
+      </div>
+      <button onclick="pdf()" class="btn btn-primary" class="pdf">print pdf</button>
+      <a href="{% url 'Diagnosis_display' %}" class="btn btn-secondary">Back</a> 
+      </div>
+      
+    
+      
+      <script>
+        console.log('hii')
+      </script>
+      
+  </div>
+   
+  <script>
+    console.log('Hii')
+    const container = document.getElementById ( "my-element" )
+    
+    function pdf ( ) {
+       html2pdf().from ( container ).save()
+    }
+
+  </script>
+
+
+  
+</body>
+</html>
+
+

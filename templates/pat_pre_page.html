@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> 
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+    rel="stylesheet"/>
+<html>
+
+  <style>
+    .main_container {
+      background-color: lightgray;
+    }
+    .diagnosis_record_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .header_style {
+      height: 10vh;
+      background: linear-gradient( to right, red , darkblue );
+      padding-left: 30px;
+      display: flex;
+      width: 100vw;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+    }
+    .header_first_heading {
+      color: white;
+      font-size: 25px;
+      font-family: "Roboto";
+    }
+    .header_second_container {
+      color: darkred;
+      font-size: 25px;
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+    .details_container {
+      margin-top: 20px;
+    }
+    .details_styles_bold {
+      font-weight: bold;
+      margin-left: 100px;
+    }
+    .contain{
+      background-image: url("https://static01.nyt.com/images/2020/10/19/well/well-hospital-chen/well-hospital-chen-superJumbo.jpg?quality=90&auto=webp");
+      background-size: cover;
+    }
+  </style>
+
+<body class="contain" style="background: aliceblue;">
+
+  <div >
+
+    <div class="main_container" id="oneTwoResultContainer">
+
+      <div class="header_style">
+        <h1 class="header_first_heading">Apollo Hospitals 
+        Enterprises Ltd...</h1>
+      </div>
+
+   
+      <div style="text-align: center";>
+        <h1 class="header_second_container">  Prescriptions Record</h1>
+      </div>
+    
+      <div class="diagnosis_record_container" id="views"> 
+        <div class="details_container">
+          <p> <span class="details_styles_bold"> Patient Id: </span> {{ customer_record.Patient_id }}</p>
+          <p> <span class="details_styles_bold"> Doctor Id: </span> {{ customer_record.Doctor_id }}<p>
+          <p><span class="details_styles_bold"> Email address: </span> {{ customer_record.Emailaddress }}</p>
+          <p><span class="details_styles_bold"> Patient Gender: </span> {{ customer_record.PatientGender}} </p>
+          <p><span class="details_styles_bold"> Prescriptions: </span> {{ customer_record.Prescriptins}} </p>
+        </div>
+      </div>
+      <a href="{% url 'Prescription_display' %}" class="btn btn-secondary">Back</a>
+      <button class="btn btn-primary" onclick="pdf()"> Download</button>
+    </div>
+
+
+
+  </div>
+  <script>
+    console.log('Hii')
+    const container = document.getElementById ( "oneTwoResultContainer" )
+    
+    function pdf ( ) {
+       html2pdf().from ( container ).save()
+    }
+
+  </script>
+
+  
+</body>
+
+</html>
+  
+
+	  
+  

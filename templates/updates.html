@@ -1,0 +1,166 @@
+{% extends 'pat_dummy2.html' %}
+
+{% block title %}
+<title style="color: aqua;">loggin</title>
+{% endblock %}
+
+
+{% block body_block %}
+<div class="container" >
+    <form method='POST' enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="row mb-4">
+                <div class="col">
+                    <div >
+                      <label  class="cars"  for="Patient">Patient Id :</label>  
+                            {{form.Patient_id}}
+                        
+                    </div>
+                </div>            
+                <div class="col">
+                    <div  >
+                        <label  class="cars"  for="Doctor">Doctor Id:</label>
+                        {{form.Doctor_id }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div >
+                
+                        <label for="patientName" class="cars">Patient Name:</label>
+                        {{ form.PatientName }}
+                        
+                    </div>
+                </div>
+            </div>
+                 
+
+            <div class="row mb-4">           
+                <div class="col">
+                    <div  >
+                        <label for="doctorname">Doctor Name:</label>
+                        {{ form.DoctorName }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div >
+                
+                        <label for="email">Email:</label>
+                        {{ form.Emailaddress }}
+                        
+                    </div>
+                </div>
+                <div class="col">
+                    <div >
+                
+                        <label for="mobile">Mobile:</label>
+                        {{ form.Patientmobile }}
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mb-4">
+                <div class="col">
+                    <div >
+                
+                        <label for="appointmentDate">AppointmentZDate :</label>
+                        {{ form.AppointmentDate }}
+                        
+                    </div>
+                </div>            
+            
+                <div class="col">
+                    <div >
+                        <label for="cars" >Time:</label>
+                        {{ form.Time}}  
+                    </div>
+                </div>            
+            </div>
+            <div class="row mb-4">       
+                <div class="col">
+                    <div  >
+                        <label for="cars">Gender:</label>
+                        {{ form.Gender }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div  >
+                        <label for="cars">Department:</label>
+                        {{ form.Department }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div  >
+                        <label for="patientName">Symptoms </label>
+                        {{ form.Symptoms }}
+                    </div>
+                </div>
+            </div>
+            <div>
+            <label class="cars" for="description">Description</label>    
+            {{ form.Description }}
+            </div>
+            <br>
+            <td><input type="submit" value="booking" class="btn btn-primary btn-block mb-4"></td> 
+    </form>
+
+
+</div>
+<style>
+
+form{
+    border-radius: 10px;
+    border:2px solid red;
+    padding: 10px;
+    width: 1000px;
+    background:blanchedalmond;
+}
+
+input
+{
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-bottom:3px solid #4fc3dc;
+}
+
+.container
+{
+position: relative;
+width:83%;
+margin-left: 50px;
+
+height:615px;
+overflow: hidden;
+}
+.bubbles{
+position: relative;
+display: flex;
+}
+.bubbles span{
+position: relative;
+width: 30px;
+height: 30px;
+background: #4fc3d4;
+margin: 0 4px;
+border-radius: 50%;
+box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+animation:animate 5s linear infinite ;
+animation-duration: calc(128s / var(--i));
+}
+.bubbles span:nth-child(even){
+background: #ff2d75;
+box-shadow: 0 0 0 10px #ff2d7544,0 0 50px #ff2d75,0 0 100px #ff2d75;
+}
+@keyframes animate{
+0%{
+    transform: translateY(100vh) scale(0);
+}
+100%{
+    transform: translateY(-10vh) scale(0.9);
+}
+}    
+</style>
+	
+{% endblock %}

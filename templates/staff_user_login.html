@@ -1,0 +1,55 @@
+{% extends 'staff_dummy3.html' %}
+{% block title %}
+<title style="color: aqua;">loggin</title>
+{% endblock %}
+
+
+{% block body_block %}
+<div class="container">
+<div class="login-box">
+    <center><h2 style="color: rgb(16, 16, 16);" class="h1">Login</h2></center>
+  <form method="POST" >
+    {% csrf_token %}
+    <div class="input-box" >
+      <label style="color: rgb(13, 13, 13);">Username</label>
+      <input type="text" id="text" name="username" required  class="form-control">
+      
+    </div>
+    <div class="input-box" >
+      <label style="color: rgb(10, 10, 10);">Password</label>
+      <input type="password" id="password" name="password"  class="form-control">
+      
+    </div><br>
+    <button type="submit" class="btn btn-primary btn-block mb-4" style="color: rgb(16, 16, 16);" >Login</button>
+    <div class="signup-link">
+      <center><a href="{% url 'hospital' %}" style="color: rgb(33, 33, 219);">Signup</a></center>
+      <center><a href="{% url 'staff_send_email_with_pin' %}" style="color: rgb(33, 33, 219);">Forget password</a></center>
+    </div>
+  
+  </form>
+ 
+
+
+</div>
+<style>
+    .container{
+        margin-top:-40%;
+    }
+    .btn{
+        color: aqua;
+    }
+    .h1{
+        margin-left: 1%;
+    }
+    form{
+      border-radius: 10px;
+      border:2px solid red;
+      padding: 10px;
+      width: 400px;
+      margin-left:35%;
+      background: blanchedalmond;
+  }
+</style>
+
+
+{% endblock %}

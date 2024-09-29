@@ -1,0 +1,105 @@
+{% extends 'pat_dummy2.html' %}
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+
+{% block body_block %}
+    <title>Doctor Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .doctor-profile {
+            text-align: center;
+        }
+
+        .doctor-profile img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+        .doctor-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .doctor-details h2 {
+            color: #333;
+        }
+
+        .doctor-details p {
+            color: #777;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: #333;
+        }
+
+        .contact-info p {
+            color: #777;
+        }
+    </style>
+    <div class="container">
+        <div class="doctor-profile">
+            <img src="https://th.bing.com/th/id/OIP.7Gp_tYv01Bskf4o8Iny-HgAAAA?pid=ImgDet&w=161&h=161&c=7" alt="Doctor Name">
+            <h1>Dr Y K Mishra</h1>
+            <p>Specialty: Cardiologist</p>
+            <label style="color: #333;">Doctor_Id:</label>
+            <select name="data1"  class="from-control">
+             {% for i in data1 %}
+                {% if i.Department == 'Cardiologist' %}
+                        <option value="{{ i.Doctor_id }}">{{ i.Doctor_id  }} </option>
+                {% endif %}
+             {% endfor %}
+            </select>
+        </div>
+
+        <div class="doctor-details">
+            <h2 style="color: red;">About Dr Y K Mishra</h2>
+
+            <p style="color: #333;">Dr Y K Mishra a highly experienced cardiologist with a passion for helping patients achieve optimal heart health.With an experience of over 32 years, he is widely recognised & has successfully performed over 14,000 open heart surgeries, & more than 500 robotic surgeries.
+                In addition to his clinical work, he also has a keen interest in training, education &research work & has been invited as a guest lecturer from all around the world.
+                He has also chaired scientific sessions in national and international conferences held in USA, UK, China, Italy, Japan, France and Far East Countries.</p>
+                <p style="color: #333;">He has conducted live cases at  his workshops held  in Thailand, Bangladesh and Nepal.
+                He has completed his masters in Surgery and MBBS from the prestigious S. S Medical College, Rewa (MP).Following which he did his PHD in Cardiovascular Surgery from Bakulev Institute of Cardiovascular Surgery, Moscow, Russia.
+                Dr Mishra completed his fellowship in Cardiovascular Surgery from Thoracic Centre, University Hospital Uppsala, Sweden. He has done  a  training in:
+                Robotic Cardiac Surgery from Odessa,Texas,USA, University Hospital  Utrecht ,Netherland,Ohio State University Columbus Medical Centre,USA
+                Minimally Invasive Cardiac Surgery from Odessa Texas,USA
+                Special course in Endoscopic IMA harvesting Institute of Tele Surgery from University of Strasbourge, France.
+                Minimally Access Valve Surgery ( Heart Post Surgery or Key hole surgery ) from Heart Port Research & Training Centre in Salt Lake City , Utah ,USA.
+                Dr Mishra has an exclusiveness of being on the Board of Directors of International Society for Minimally Invasive Cardiac Surgery. He is the 4th Asian to be honoured and Second Indian to hold this distinction
+                He has received Lifetime Achievement Award by Dr A. P. J. Abdul Kalam  & Honoris Causa Doctorate (Doctor of Science) conferred by Governor of Madhya Pradesh and Chancellor of Rani Durgavati Vishwavidyalaya.
+                He is the Founder Member of Indian College of Cardiology & also the Fellow Member of Association Thoracic Cardiovascular Surgeons of India.</p>
+                <a href="{% url 'Appoint' %}" class="btn btn-danger">Booking Appointment</a>
+        </div>
+
+        <div class="contact-info" style="color: #333;">
+            <h3>Contact Information</h3>
+            <p>Email: john.doe@example.com</p>
+            <p>Phone: +123-456-7890</p>
+            <p>Address: 123 Main Street, City, State, Zip</p>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+ 

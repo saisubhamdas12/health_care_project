@@ -1,0 +1,113 @@
+{% extends 'doc_dummy1.html' %}
+
+{% block title %}
+<title style="color: aqua;">loggin</title>
+{% endblock %}
+
+
+{% block body_block %}
+	
+<form method="POST" style=" color:rgb(8, 8, 8);">
+		{% csrf_token %}
+	
+		<div class="row mb-4">
+            <div class="col">
+                <div >
+                    <label  class="form-label"  for="Doctor">Patient Id:</label>
+                    {{ form.Patient_id }}
+                </div>
+            </div>            
+            <div class="col">
+                <div  >
+                    <label  class="form-label"  for="Doctor">Doctor Id:</label>
+                    {{ form.Doctor_id }}
+                </div>
+            </div>
+            <div class="col">
+                <div  >
+                    <label  class="form-label"  for="PatientName">Patient Name:</label>
+                    {{ form.PatientName }}
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="DoctorName">Doctor Name:</label>
+                    {{ form.DoctorName }}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label for="cars">Gender:</label>
+                    {{ form.PatientGender }}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="DOB">DOB:</label>
+                    {{ form.DOB }}
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="Phoneno">Phone no:</label>
+                    {{form.Phoneno}}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="Phoneno">Email address:</label>
+                    {{ form.Emailaddress}}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label for="cars">Neurological:</label>
+                    {{ form.Neurological}}
+                </div>
+            </div> 
+        </div>
+        <div class="row md-4">
+            <div class="col">
+                <div>
+                    <label for="cars">Pychological:</label>
+                    {{ form.Pychological}}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label for="cars">Other:</label>
+                    {{ form.Other}}
+                </div>
+            </div>
+        </div>
+        <div>
+        <label class="form-label" for="description">Diagnosis</label>    
+            {{ form.Diagnosis}}
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Update Record</button>
+        </div>
+	
+</form>
+	<style>
+		
+		form{
+			border-radius: 10px;
+			border:2px solid red;
+			padding: 10px;
+			width: 900px;
+			height: 600px;
+			margin-top: 5x;
+			margin-left: 250px;
+            background: rgb(235, 225, 225);
+		}
+	
+	</style>
+	
+
+
+{% endblock %}

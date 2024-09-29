@@ -1,0 +1,168 @@
+{% extends 'doc_dummy1.html' %}
+{% block title %}
+<title>login</title>
+{% endblock %}
+
+
+{% block body_block %}
+<center><h1 style="color: coral;">Diagnosis</h1></center>
+<div class="container">
+    <!-- Patient_id=models.CharField(max_length=100)
+    Doctor_id= models.CharField(max_length=100)
+    PatientName=models.CharField(max_length=40,null=True)
+    DoctorName=models.CharField(max_length=40,null=True)
+    PatientGender=models.CharField(max_length=100)
+    DOB=models.DateField()
+    Phoneno=models.CharField(max_length=10)
+    Emailaddress=models.EmailField()
+    Neurological=models.CharField(max_length=100,default='no')
+    Pychological=models.CharField(max_length=100,default='no')
+    Other=models.CharField(max_length=100,default='no')
+    Diagnosis=models.TextField() -->
+
+    <form method="post"  action="{% url 'Diagnosis'  %}" >
+        {% csrf_token %}
+        
+        <div class="row mb-4">
+            <div class="col">
+                <div >
+                    <label  class="form-label"  for="Doctor">Patient Id:</label>
+                    {{ form.Patient_id }}
+                </div>
+            </div>            
+            <div class="col">
+                <div  >
+                    <label  class="form-label"  for="Doctor">Doctor Id:</label>
+                    {{ form.Doctor_id }}
+                </div>
+            </div>
+            <div class="col">
+                <div  >
+                    <label  class="form-label"  for="PatientName">PatientName:</label>
+                    {{ form.PatientName }}
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="DoctorName">DoctorName:</label>
+                    {{ form.DoctorName }}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label for="cars">Gender:</label>
+                    {{ form.PatientGender }}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="DOB">DOB:</label>
+                    {{ form.DOB }}
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="Phoneno">Phoneno:</label>
+                    {{form.Phoneno}}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label  class="form-label"  for="Phoneno">Emailaddress:</label>
+                    {{ form.Emailaddress}}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label for="cars">Neurological:</label>
+                    {{ form.Neurological}}
+                </div>
+            </div> 
+        </div>
+        <div class="row md-4">
+            <div class="col">
+                <div>
+                    <label for="cars">Pychological:</label>
+                    {{ form.Pychological}}
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <label for="cars">Other:</label>
+                    {{ form.Other}}
+                </div>
+            </div>
+        </div>
+        <div>
+        <label class="form-label" for="description">Diagnosis</label>    
+            {{ form.Diagnosis}}
+            </div>
+            <br>
+            <td><input type="submit" value="submit" class="btn btn-primary btn-block mb-4"></td> 
+        </div>
+    </form>
+</div>
+
+<style>
+
+    form{
+        border-radius: 10px;
+        border:2px solid red;
+        padding: 10px;
+        width: 900px;
+        height: 600px;
+        margin-top: -17px;
+        margin-left: 59px;
+        background: blanchedalmond;
+    }
+    
+
+    input
+    {
+        background: transparent;
+        color: #fff;
+        border: none;
+        border-bottom:3px solid #4fc3dc;
+    }
+
+    .container
+    {
+     position: relative;
+     width:83%;
+     margin-left: 50px;
+     margin-top:-50%;
+     height:615px;
+     overflow: hidden;
+    }
+   .bubbles{
+    position: relative;
+    display: flex;
+   }
+   .bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3d4;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px #4fc3dc,0 0 100px #4fc3dc;
+    animation:animate 5s linear infinite ;
+    animation-duration: calc(128s / var(--i));
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(0.9);
+    }
+}    
+
+
+</style>
+{% endblock %}
